@@ -58,6 +58,7 @@
 
 .task area{
     border:1px solid lightslategray;
+    margin-top: 2em;
 }
 
 .task-tabs{
