@@ -1,0 +1,51 @@
+.bg-video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 스크롤바 제거 */ 
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* 영상 비율을 유지하며 화면을 꽉 채우기 */
+  border-radius: 12px; /* 모서리 부드럽게 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 그림자 효과 */
+  z-index: -1;
+}
+
+/* 모바일에서 최소 높이 적용 */
+@media (max-width: 768px) {
+    .video-container {
+        min-height: 400px; /* 최소 높이를 400px로 설정 */
+        height: 100vw; 
+    }
+}
+
+/* =====================================================
+   🔊 소리 켜기/끄기 버튼
+   position: fixed → 스크롤과 상관없이 항상 같은 자리
+   right/bottom   → 오른쪽 아래 구석 (내용을 안 가리는 위치)
+   z-index: 10    → 영상(-1)과 내용보다 '위'라 항상 클릭 가능
+   ===================================================== */
+.sound-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+ 
+  font-size: clamp(13px, 3.5vw, 16px);   /* 모바일에서도 적당한 크기 */
+  padding: 12px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+ 
+  /* 반투명 유리 느낌: 영상을 살짝 비치게 */
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+ 
+.sound-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+}
