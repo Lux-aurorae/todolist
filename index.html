@@ -8,32 +8,35 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!doctype html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- ★ 반응형의 자격증: 폰 화면 크기에 맞춰 보여달라는 선언 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>할일 리스트</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <h1>할일 리스트</h1>
-
-    <!-- ① 입력창 + 추가 버튼 -->
-    <input type="text" id="task-input" placeholder="할일 입력" />
-    <button id="add-button">+</button>
-
-    <!-- ② 탭 3개 + 언더바 -->
-    <div id="tab-menu">
-      <button class="tab" id="tab-all">전체</button>
-      <button class="tab" id="tab-ing">진행중</button>
-      <button class="tab" id="tab-done">완료</button>
-      <div id="under-bar"></div>
+ <div class="container">
+      <h1>📝 나의 할일</h1>
+ 
+      <!-- ① 입력 영역 -->
+      <div class="input-row">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="할일을 입력하고 Enter 또는 + 를 누르세요"
+          maxlength="50"
+        />
+        <button id="add-button" title="할일 추가">+</button>
+      </div>
+      <!-- ★UX: 빈 값 입력 시 안내 문구가 여기 나타남 -->
+      <p id="input-warning" class="input-warning"></p>
+ 
+      <!-- ② 탭: 각 탭에 개수 뱃지가 붙음 ★UX -->
+      <div id="tab-menu">
+        <button class="tab" id="tab-all">전체 <span class="count" id="count-all">0</span></button>
+        <button class="tab" id="tab-ing">진행중 <span class="count" id="count-ing">0</span></button>
+        <button class="tab" id="tab-done">완료 <span class="count" id="count-done">0</span></button>
+        <div id="under-bar"></div>
+      </div>
+ 
+      <!-- ③ 할일 목록 -->
+      <div id="task-board"></div>
     </div>
-
-    <!-- ③ 할일이 JS로 그려지는 곳 -->
-    <div id="task-board"></div>
+  </body>
+</html>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="main.js"></script>     
