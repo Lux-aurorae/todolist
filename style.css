@@ -1,0 +1,61 @@
+/* =====================================
+   기능에 필요한 기본 스타일
+   ===================================== */
+
+/* 완료된 할일: 취소선 */
+.done {
+  text-decoration: line-through;
+}
+
+/* 언더바가 움직이기 위한 필수 설정 */
+#tab-menu {
+  position: relative;    /* 언더바의 기준점 */
+  display: inline-block;
+}
+
+#under-bar {
+  position: absolute;    /* tab-menu 기준으로 좌표 이동 */
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;              /* 시작은 0, JS가 크기를 정함 */
+  background: black;
+  transition: left 0.25s, width 0.25s;   /* 스르륵 이동 */
+}
+
+/* =====================================
+   모바일 반응형 (수정&보완 추가분)
+   ===================================== */
+
+body {
+  max-width: 500px;      /* 큰 화면에서 너무 퍼지지 않게 */
+  margin: 0 auto;        /* 가운데 정렬 */
+  padding: 16px;
+}
+
+#task-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;       /* ★ 16px 미만이면 아이폰이 입력 시 화면 강제 확대 */
+}
+
+/* 할일 한 줄: 좁은 화면에서 자연스럽게 줄바꿈 */
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+/* ---- 화면 폭 480px 이하(폰)일 때만 발동 ---- */
+@media (max-width: 480px) {
+  .tab {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  .task-row button {
+    padding: 10px 12px;  /* 손가락으로 누르기 좋은 크기 */
+  }
+}
