@@ -104,13 +104,9 @@ function render() {
   for (let i = 0; i < list.length; i++) {
     resultHTML += `
       <div class="task-row ${list[i].isComplete ? "done" : ""}">
-        <button class="check-btn"
-                onclick="toggleComplete(${list[i].id})"
-                title="${list[i].isComplete ? "되돌리기" : "완료하기"}">✔</button>
-        <span class="task-text">${list[i].content}</span>
-        <button class="delete-btn"
-                onclick="deleteTask(${list[i].id})"
-                title="삭제">🗑️</button>
+    <button class="check-btn" onclick="toggleComplete(${list[i].id})">✔</button>
+    <span class="task-text">${list[i].content}</span>
+    <button class="delete-btn" onclick="deleteTask(${list[i].id})">🗑️</button>
       </div>
     `;
   }

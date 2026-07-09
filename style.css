@@ -187,3 +187,80 @@ h1 { margin-bottom: 18px; }
   h1 { font-size: 22px; }
   .tab { font-size: 14px; }
 }
+/* ① 체크 버튼: 빈 동그라미 → 완료 시 초록 채움 */
+.check-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  font-size: 18px;
+  border: 2px solid #d8d2c4;
+  border-radius: 50%;
+  background: #fff;
+  color: transparent;          /* 미완료: 체크 표시 숨김(빈 원) */
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.task-row.done .check-btn {
+  background: #7bc47f;         /* 완료: 초록 + 흰 체크 */
+  border-color: #7bc47f;
+  color: #fff;
+}
+
+/* ② 취소선: 카드에 done이 붙으면 글자에 줄 긋기 */
+.task-row.done .task-text {
+  text-decoration: line-through;
+  color: #b5ad9d;
+}
+
+/* ③ 삭제 버튼 */
+.delete-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.55;
+}
+.delete-btn:hover { opacity: 1; background: #fdecec; }
+
+/* ① 체크 버튼: 빈 동그라미 → 완료 시 초록 채움 */
+.check-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  font-size: 18px;
+  border: 2px solid #d8d2c4;
+  border-radius: 50%;
+  background: #fff;
+  color: transparent;          /* 미완료: 체크 표시 숨김(빈 원) */
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.task-row.done .check-btn {
+  background: #7bc47f;         /* 완료: 초록 + 흰 체크 */
+  border-color: #7bc47f;
+  color: #fff;
+}
+
+/* ② 취소선: 카드에 done이 붙으면 글자에 줄 긋기 */
+.task-row.done .task-text {
+  text-decoration: line-through;
+  color: #b5ad9d;
+}
+
+/* ③ 삭제 버튼 */
+.delete-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.55;
+}
+.delete-btn:hover { opacity: 1; background: #fdecec; }
