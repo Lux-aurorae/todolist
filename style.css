@@ -88,6 +88,6 @@ padding: 1em;
 
 .task{
     display: flex;
-    justify-conent: space-between;
+    justify-content: space-between;
     padding: 1em;
 }

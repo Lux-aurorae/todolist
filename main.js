@@ -23,7 +23,6 @@ addButton. addEventListener("click",addTask)
 function addTask(){
   let taskContent = taskInput.value
   taskList.push(taskContent)
-  console.log(taskList)
 }
 
 function render(){
